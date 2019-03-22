@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.clock{
+				width: 600px;
+				height: 600px;
+				background: url(img/clock.jpg);
+				position: relative;
+			}
+			.clock div{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				
+			}
+			#hour{
+				background: url(img/hour.png) no-repeat center center;
+			}
+			#minute{
+				background: url(img/minute.png) no-repeat center center;
+			}
+			#second{
+				background: url(img/second.png) no-repeat center center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="clock">
+			<div id="hour">
+				
+			</div>
+			<div id="minute">
+				
+			</div>
+			<div id="second">
+				
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				//获取时分秒通过id
+				var shi=document.getElementById("hour");
+				var fen=document.getElementById("minute");
+				var miao=document.getElementById("second");
+				//函数的封装
+				function clock(){
+				//获取当前时间
+				var data=new Date();
+				//获取毫秒
+				var ms=data.getMilliseconds()
+				//获取几点了
+				//秒
+				var second=data.getSeconds()+ms/1000;
+				//分
+				var minute=data.getMinutes()+second/60;
+				//时
+				var hour=data.getHours()%12+minute/60;
+				//console.log(hour,minute,second);
+				//谷歌浏览器的兼容性写法webkitTransform
+				shi.style.webkitTransform="rotate("+hour*30+"deg)"
+				fen.style.webkitTransform="rotate("+minute*6+"deg)"
+				miao.style.webkitTransform="rotate("+second*6+"deg)"
+				}
+				//设置定时器，每隔1秒执行一次函数里的代码
+				setInterval(clock,1000);
+			}
+		</script>
+	</body>
+</html>

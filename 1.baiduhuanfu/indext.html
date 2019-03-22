@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body{
+				background-image: url(img/1.jpg);
+			}
+			.box{
+				width: 1000px;
+				height: 100px;
+				margin: 100px auto;
+				
+			}
+			img{
+				width: 200px;
+				height: 100px;
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/1.jpg" alt="1"/>
+			<img src="img/2.jpg" alt="1"/>
+			<img src="img/3.jpg" alt="1"/>
+			<img src="img/4.jpg" alt="1"/>
+			<img src="img/5.jpg" alt="1"/>
+		</div>
+		<script type="text/javascript">
+//			window.onload=function(){
+//				var img=document.getElementsByTagName("img");
+//				var body1=document.getElementsByTagName("body")[0];
+//				
+//				img[0].onclick=function(){
+//					
+//					body1.style.backgroundImage="url(img/1.jpg)";
+//				}
+//				img[1].onclick=function(){
+//					
+//					body1.style.backgroundImage="url(img/2.jpg)";
+//				}
+//				img[2].onclick=function(){
+//					body1.style.backgroundImage="url(img/3.jpg)";
+//				}
+//				img[3].onclick=function(){
+//					body1.style.backgroundImage="url(img/4.jpg)";
+//				}
+//				img[4].onclick=function(){
+//					body1.style.backgroundImage="url(img/5.jpg)";
+//				}
+//			}
+			window.onload=function(){
+				var img=document.getElementsByTagName("img");
+				var body1=document.getElementsByTagName("body")[0];
+				console.log(body1);
+			    for(var i=0;i<img.length;i++){
+				(function(i){
+					img[i].onclick=function(e){
+					var imgurl=e.target.getAttribute("src");
+					body1.style.backgroundImage="url("+imgurl+")"
+					}
+				})(i)
+			}
+			}
+			
+		</script>
+	</body>
+</html>

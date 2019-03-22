@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.pic{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<img class="pic" src="img/img.png"/>
+	</body>
+	<script>
+		var img=document.getElementsByClassName("pic")[0];
+		var x=0;
+		var y=0;
+		var tarx=0;
+		var tary=0;
+		document.onclick=function(event){
+			var event=window.event||event;
+				tarx=event.clientX-50;
+			    tary=event.clientY-50;
+		
+		}
+		setInterval(function(){
+			x=x+(tarx-x)/10;
+			y=y+(tary-y)/10;
+			img.style.left=tarx+"px"
+			img.style.top=tary+"px"
+		},30)
+	</script>
+</html>

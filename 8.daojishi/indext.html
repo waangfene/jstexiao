@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script type="text/javascript">
+			
+			function getDao(){
+			//获取当前时间
+			var date1 = new Date();
+			//获取时间
+			var date2 = new Date("2019/03/20  12:00:00");
+			//时间戳，毫秒数
+			var time=date2.getTime()- date1.getTime();
+//			console.log(time);
+			//计算相差秒数
+			var sencond=time/1000;
+			//计算天数
+			var day=parseInt(sencond/3600/24);
+			//计算小时
+			var hour=parseInt(sencond/3600%24);
+			//计算分数
+			var sen=sencond-day*24*3600-hour*3600;
+			//计算分钟数
+			var min=parseInt(sen/60);
+			//计算秒数
+			var s=parseInt(sen%60);
+			
+			document.getElementsByTagName("div")[0].innerHTML="倒计时："+day+"天"+hour+"小时"+min+"分"+s+"秒";
+			}
+			setInterval(getDao,1000);
+		</script>
+	</body>
+</html>

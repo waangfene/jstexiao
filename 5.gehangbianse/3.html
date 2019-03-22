@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script type="text/javascript">
+			window.onload = function() {
+				var li = document.getElementsByTagName("li");
+				
+				for(var i = 0; i < li.length; i++) {
+					if(i % 2 == 0) {
+						li[i].style.backgroundColor = "red";
+					} else {
+						li[i].style.backgroundColor = "yellow";
+					}
+					(function(i) {
+						li[i].onmouseover = function() {
+							li[i].style.backgroundColor = "palevioletred";
+						}
+						li[i].onmouseout = function() {
+							if(i % 2 == 0) {
+								li[i].style.backgroundColor = "red";
+							} else {
+								li[i].style.backgroundColor = "yellow";
+							}
+						}
+					})(i)
+
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//			for(var i=1;i<=9;i++){
+			////				document.write(i);
+			//				for(var j=1;j<=i;j++){
+			//					document.write(j+"*"+i+"="+j*i+"&nbsp;&nbsp;&nbsp;");
+			//				}
+			//				document.write("<br/>")
+			//			}
+			//			for(var i=0;i<7;i++){
+			//				//document.write(i);
+			//				for(var k=7;k>=i;k--){
+			////					
+			//					
+			//					document.write("&nbsp;&nbsp;");
+			//					
+			//				}
+			//				for(var j=0;j<i;j++){
+			//					document.write(j);
+			//				}
+			//				for(var n=i;n>=0;n--){
+			//					document.write(n);
+			//				}
+			//				
+			//				document.write("<br/>");
+			//			}
+			//		for(var i=0;i<7;i++){
+			////			document.write(i)
+			//			for(var n=7;n>i;n--){
+			//			document.write("&nbsp;&nbsp;")
+			//				
+			//			}
+			//			for(var j=0;j<i;j++){
+			//			document.write(j);	
+			//			}
+			//			for(var a=i;a>=0;a--){
+			//			document.write(a);
+			//			}
+			//			document.write("<br/>")
+			//		}
+			//		window.onload=function(){
+			//			var img=document.getElementsByTagName("img");
+			//			for(var i=0;i<img.length;i++){
+			//				(function(i){
+			//					img[i].onclick=function(e){
+			//						var imgurl=e.target.getAttribute("src");
+			//						console.log(imgurl);
+			//						document.body.style.background="url("+imgurl+")";
+			//					}
+			//				})(i)
+			//			}
+			//		}
+			//		window.onload=function(){
+			//			var img=document.getElementsByTagName("img");
+			//			var header=document.getElementsByClassName("header")[0];
+			//			for(var i=0;i<img.length;i++){
+			//				(function(i){
+			//					img[i].onmouseover=function(){
+			//						header.style.background="url(../2.商品展示/img/0"+(i+1)+"big.jpg)"
+			//					}
+			//				})(i)
+			//			}
+			//		}
+			//		window.onload=function(){
+			//			var input=document.getElementsByTagName("input");
+			//			console.log(input);
+			//			var button=document.getElementsByTagName("button");
+			//			console.log(button);
+			//			button[0].onclick=function(){
+			//			    for(var i=0;i<input.length;i++){
+			//					input[i].checked=true;
+			//				}
+			//			}
+			//			button[1].onclick=function(){
+			//			    for(var i=0;i<input.length;i++){
+			//					input[i].checked=false;
+			//				}
+			//			}
+			//			button[2].onclick=function(){
+			//			    for(var i=0;i<input.length;i++){
+			//					(input[i].checked==true)?(input[i].checked=false):(input[i].checked=true)
+			//				}
+			//			}
+			//		}
+//			window.onload = function() {
+//				var lis = document.getElementsByTagName("li");
+//				for(var i = 0; i < lis.length; i++) {
+//					if(i % 2 == 0) {
+//						lis[i].style.backgroundColor = "#ccc"
+//					} else {
+//						lis[i].style.backgroundColor = "red"
+//					}
+//					(function(i) {
+//						lis[i].onmouseover = function() {
+//							lis[i].style.background = "pink"
+//						}
+//						lis[i].onmouseout = function() {
+//							if(i % 2 == 0) {
+//								lis[i].style.backgroundColor = "#ccc"
+//							} else {
+//								lis[i].style.backgroundColor = "red"
+//							}
+//						}
+//					})(i)
+//
+//				}
+//			}
+			window.onload=function(){
+				var input=document.getElementsByTagName("input")[0];
+				var span=document.getElementsByTagName("span")[0];
+				
+				input.onblur = function(){
+				//1.获取value
+				var val = input.value;
+				if(val == ""){
+					
+					//1.修改成：不能为空
+					span.innerHTML = "不能为空";
+					//2.修改成   wrong样式
+					span.className = "wrong";
+				}else if(val <0 || val >150){
+					//1.修改成：不在范围内
+					span.innerHTML = "不在范围内";
+					//2.修改成   wrong样式
+					span.className = "wrong";
+				}else if(isNaN(Number(val))){
+					//1.修改成：请输入数值
+					span.innerHTML = "请输入数值";
+					//2.修改成   wrong样式
+					span.className= "wrong";
+				}else{
+					//1.修改成：请输入数值
+					span.innerHTML = "输入正确";
+					//2.修改成   right样式
+					span.className= "right";
+				}
+			}
+			
+			
+				
+			}
+		</script>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+			}
+			/*body{
+				width: 100%;
+				height: 100%;
+				background: url(../1.百度换肤/img/1.jpg);
+			}
+			div{
+				width: 1000px;
+				height: 100px;
+				margin: 100px auto;
+				
+			}
+			img{
+				width: 200px;
+				height: 100px;
+				float: left;
+			}*/
+			/*.quan{
+				width: 360px;
+				height: 430px;
+				margin: 100px auto;
+				border:1px solid gray;
+			}
+			.header{
+				width: 360px;
+				height: 360px;
+				background: url(../2.商品展示/img/01big.jpg);
+			}
+			img{
+				float: left;
+			}
+			.body{
+				width: 360px;
+				height: 70px;
+			}*/
+/*	/*	/*	/*
+			li {
+				width: 100%;
+				height: 30px;
+			}*/
+			/*li:nth-child(2n){
+				background: palegreen;
+			} 
+			li:nth-child(2n-1){
+				background: gold;
+			} */
+			/*li:hover{
+				background: pink;
+			}*/
+			div{
+				width: 400px;
+				height: 100px;
+				margin: 100px auto;
+			}
+			label{
+				width: 40px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				float: left;
+			}
+			input{
+				float: left;
+				width: 150px;
+				height: 20px;
+			}
+			span{
+				float: left;
+				width: 200px;
+				height: 25px;
+				background:url(../5.表单验证/img/wrong.png) no-repeat sandybrown 4px;
+				text-indent: 30px;
+				line-height: 25px;
+			}
+			div span.wrong{
+				background:url(../5.表单验证/img/wrong.png) no-repeat sandybrown 4px;
+			}
+			div span.right{
+				background:url(../5.表单验证/img/right.png) no-repeat aquamarine 4px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<div>
+			<img src="../1.百度换肤/img/1.jpg"/>
+			<img src="../1.百度换肤/img/2.jpg"/>
+			<img src="../1.百度换肤/img/3.jpg"/>
+			<img src="../1.百度换肤/img/4.jpg"/>
+			<img src="../1.百度换肤/img/5.jpg"/>
+		</div>-->
+		<!--<div class="quan">
+			<div class="header"></div>
+			<div class="body">
+				<img src="../2.商品展示/img/01.jpg" />
+				<img src="../2.商品展示/img/02.jpg" />
+				<img src="../2.商品展示/img/03.jpg" />
+				<img src="../2.商品展示/img/04.jpg" />
+				<img src="../2.商品展示/img/05.jpg" />
+			</div>
+		</div>-->
+		<!--<div>
+			<button>全选</button>
+			<button>全不选</button>
+			<button>反选</button><br />
+			<lable>篮球</lable><input type="checkbox" /><br />
+			<lable>篮球</lable><input type="checkbox" /><br />
+			<lable>篮球</lable><input type="checkbox" /><br />
+			<lable>篮球</lable><input type="checkbox" /><br />
+			<lable>篮球</lable><input type="checkbox" /><br />
+			<lable>篮球</lable><input type="checkbox" /><br />
+			<lable>篮球</lable><input type="checkbox" /><br />
+			<lable>篮球</lable><input type="checkbox" /><br />
+			<lable>篮球</lable><input type="checkbox" /><br />
+			<lable>篮球</lable><input type="checkbox" /><br />
+			<lable>篮球</lable><input type="checkbox" /><br />
+			<lable>篮球</lable><input type="checkbox" /><br />
+		</div>-->
+		<!--<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>-->
+		<div>
+			<label>高数</label><input type="text" name="text"/>
+			<span>请输入数字</span>
+		</div>
+	</body>
+
+</html>
